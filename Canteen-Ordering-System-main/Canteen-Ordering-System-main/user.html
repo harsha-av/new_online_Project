@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>User Login | SIEI Bites</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white">
+
+  <!-- ✅ Navbar -->
+  <nav class="bg-black bg-opacity-80 p-4 flex flex-wrap justify-between items-center">
+    <h1 class="text-yellow-400 text-2xl font-bold mb-2 sm:mb-0">👩‍🎓 Welcome</h1>
+    <div class="space-x-2 flex flex-wrap justify-center">
+      <a href="home-user.html" class="px-4 py-2 bg-yellow-400 text-black rounded hover:bg-yellow-300">Home</a>
+      <a href="menu-user.html" class="px-4 py-2 bg-yellow-400 text-black rounded hover:bg-yellow-300">Menu</a>
+      <a href="myorders-user.html" class="px-4 py-2 bg-yellow-400 text-black rounded hover:bg-yellow-300">My Orders</a>
+      <a href="cart-user.html" class="px-4 py-2 bg-yellow-400 text-black rounded hover:bg-yellow-300">Cart</a>
+      <a href="studentlogin-user.html" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Logout</a>
+    </div>
+  </nav>
+
+  <!-- ✅ Login Form Card -->
+  <div class="flex justify-center items-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="w-full max-w-md bg-gray-900 border border-yellow-400 rounded-xl shadow-lg p-6 sm:p-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-yellow-400 text-center mb-6">🍽️ User Login</h2>
+
+      <form onsubmit="handleLogin(event)" class="space-y-5">
+        <!-- Hall Ticket Number -->
+        <div>
+          <label for="hallticket" class="block text-sm mb-1">Hall Ticket Number</label>
+          <input type="text" id="hallticket" name="hallticket" required
+                 class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        </div>
+
+        <!-- Name -->
+        <div>
+          <label for="name" class="block text-sm mb-1">Name</label>
+          <input type="text" id="name" name="name" required
+                 class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label for="email" class="block text-sm mb-1">Email</label>
+          <input type="email" id="email" name="email" required
+                 class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        </div>
+
+        <!-- Password -->
+        <div>
+          <label for="password" class="block text-sm mb-1">Password</label>
+          <input type="password" id="password" name="password" required
+                 class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit"
+                class="w-full py-2 bg-yellow-400 text-black font-semibold rounded hover:bg-yellow-500 transition duration-200">
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ✅ Script -->
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+
+      // Get values
+      const hallticket = document.getElementById("hallticket").value.trim();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      // Store in sessionStorage (can be replaced by backend logic later)
+      sessionStorage.setItem("user", JSON.stringify({ hallticket, name, email }));
+
+      // Redirect to user dashboard
+      window.location.href = "home-user.html";
+    }
+  </script>
+
+</body>
+</html>

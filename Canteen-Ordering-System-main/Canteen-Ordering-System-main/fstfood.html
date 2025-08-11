@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Veg Menu | SIEI Bites</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .nav-link {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #facc15;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::before,
+    .active::before {
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-gray-950 via-black to-gray-900 text-gray-200 font-sans leading-relaxed">
+
+  <!-- Header -->
+  <header class="bg-black bg-opacity-80 p-4 sticky top-0 z-50 shadow-md">
+    <div class="max-w-6xl mx-auto flex justify-between items-center flex-wrap">
+      <h1 class="text-yellow-400 text-2xl font-bold">🍽️ SIEI Bites</h1>
+      <nav class="flex flex-wrap justify-center space-x-6 text-lg font-semibold mt-2 sm:mt-0">
+        <a href="index.html" class="nav-link text-white">Home</a>
+        <a href="about.html" class="nav-link text-white">About</a>
+        <a href="menu.html" class="nav-link active text-yellow-300">Menu</a>
+        <a href="contact.html" class="nav-link text-white">Contact</a>
+        <a href="review.html" class="nav-link text-white">Review</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Dropdown Category Menu -->
+<div class="relative max-w-6xl mx-auto text-center mt-4">
+  <button onclick="toggleDropdown()" class="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 px-4 rounded inline-flex items-center">
+    🍴 Select Category ▼
+  </button>
+  <div id="dropdownMenu" class="hidden absolute z-10 mt-2 w-full sm:w-60 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white shadow-lg rounded-lg overflow-hidden">
+    <a href="breakfst.html" class="block px-4 py-2 hover:bg-gray-700">Break Fast</a>
+    <a href="lunch.html" class="block px-4 py-2 hover:bg-gray-700">Lunch</a>
+    <a href="fstfood.html" class="block px-4 py-2 hover:bg-gray-700">Fast Food</a>
+    <a href="snacks.html" class="block px-4 py-2 hover:bg-gray-700">Snacks</a>
+    <a href="chips.html" class="block px-4 py-2 hover:bg-gray-700"> Chips</a>
+    <a href="biscuits.html" class="block px-4 py-2 hover:bg-gray-700">Biscuits</a>
+    <a href="chocolates.html" class="block px-4 py-2 hover:bg-gray-700"> Chocolates</a>
+    <a href="teabev.html" class="block px-4 py-2 hover:bg-gray-700">Tea & Beverages</a>
+    <a href="drinks.html" class="block px-4 py-2 hover:bg-gray-700"> Drinks</a>
+  </div>
+</div>
+
+
+  <!-- Veg Items Section -->
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-4xl sm:text-5xl font-extrabold text-yellow-400 mb-10 text-center">BreakFast</h2>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Item 1 -->
+      <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+        <img src="https://source.unsplash.com/400x250/?veg-biryani" alt="Veg Biryani" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h3 class="text-xl font-bold text-yellow-300">Veg Biryani</h3>
+          <p class="text-gray-300 mt-1">Spicy and flavorful biryani with fresh veggies.</p>
+          <p class="text-green-400 mt-2 font-semibold">₹50</p>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+        <img src="https://source.unsplash.com/400x250/?wrap,vegetarian" alt="Veg Wrap" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h3 class="text-xl font-bold text-yellow-300">Veg Wrap</h3>
+          <p class="text-gray-300 mt-1">Healthy wrap filled with fresh veggies and sauces.</p>
+          <p class="text-green-400 mt-2 font-semibold">₹40</p>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+        <img src="https://source.unsplash.com/400x250/?pulao,vegetarian" alt="Veg Pulao" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h3 class="text-xl font-bold text-yellow-300">Veg Pulao</h3>
+          <p class="text-gray-300 mt-1">Mild and aromatic pulao cooked with seasonal vegetables.</p>
+          <p class="text-green-400 mt-2 font-semibold">₹45</p>
+        </div>
+      </div>
+
+      <!-- Add more items as needed -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black bg-opacity-80 text-center p-4 text-gray-400">
+    &copy; 2025 SIEI Bites. Designed with ❤️ by the Students of SIEI.
+  </footer>
+  <script>
+  function toggleDropdown() {
+    const dropdown = document.getElementById("dropdownMenu");
+    dropdown.classList.toggle("hidden");
+  }
+
+  // Optional: Close dropdown if clicked outside
+  window.addEventListener("click", function(e) {
+    const button = document.querySelector("button[onclick='toggleDropdown()']");
+    const menu = document.getElementById("dropdownMenu");
+    if (!button.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.add("hidden");
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu  | SIEI Bites</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .nav-link {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #facc15;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::before,
+    .active::before {
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-gray-950 via-black to-gray-900 text-gray-200 font-sans leading-relaxed">
+
+  <!-- Header -->
+  <header class="bg-black bg-opacity-80 p-4 sticky top-0 z-50 shadow-md">
+    <div class="max-w-6xl mx-auto flex justify-between items-center flex-wrap">
+      <h1 class="text-yellow-400 text-2xl font-bold">🍽️ SIEI Bites</h1>
+      <nav class="flex flex-wrap justify-center space-x-6 text-lg font-semibold mt-2 sm:mt-0">
+        <a href="index.html" class="nav-link  text-white">Home</a>
+        <a href="about.html" class="nav-link text-white">About</a>
+        <a href="index.html" class="nav-link active text-yellow-300">Menu</a>
+        <a href="contact.html" class="nav-link text-white">Contact</a>
+        <a href="review.html" class="nav-link text-white">Review</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Menu Section -->
+  <section class="max-w-6xl mx-auto px-6 py-16 text-center">
+    <h2 class="text-4xl sm:text-5xl font-extrabold text-yellow-400 mb-4">Welcome to SIEI Bites 🍔</h2>
+    <p class="text-gray-300 mb-12 text-lg">Tap a category below to explore delicious items and place your order!</p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+  <!-- Breakfast -->
+  <a href="breakfst.html" class="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition transform">
+    <img src="CANTEEN ITEMS\breakfast.jpeg" alt="Veg" class="w-full h-48 object-cover" loading="lazy">
+    <div class="p-4">
+      <h3 class="text-2xl font-bold text-yellow-300">Breakfast</h3>
+      <p class="text-gray-300 mt-1">Start your day with delicious and filling options like idli, dosa, poori, and upma – served fresh every morning!</p>
+    </div>
+  </a>
+
+  <!-- Lunch -->
+  <a href="lunch.html" class="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition transform">
+    <img src="CANTEEN ITEMS\lunch.jpg" alt="Non-Veg" class="w-full h-48 object-cover" loading="lazy">
+    <div class="p-4">
+      <h3 class="text-2xl font-bold text-yellow-300">Lunch</h3>
+      <p class="text-gray-300 mt-1">Enjoy hearty meals with veg and non-veg curries, biryani, and traditional rice dishes to keep you energized for the day.</p>
+    </div>
+  </a>
+
+  <!-- fast food -->
+  <a href="drinks.html" class="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition transform">
+    <img src="CANTEEN ITEMS\fast food.jpeg" alt="Drinks" class="w-full h-48 object-cover" loading="lazy">
+    <div class="p-4">
+      <h3 class="text-2xl font-bold text-yellow-300">Fast Food</h3>
+      <p class="text-gray-300 mt-1">Quick bites like sandwiches, pasta, noodles, and rolls — perfect for a tasty break between classes.</p>
+    </div>
+  </a>
+
+  <!--snacks -->
+  <a href="chips.html" class="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition transform">
+    <img src="CANTEEN ITEMS\snacks.jpeg" alt="Chips" class="w-full h-48 object-cover" loading="lazy">
+    <div class="p-4">
+      <h3 class="text-2xl font-bold text-yellow-300">Snacks</h3>
+      <p class="text-gray-300 mt-1">Light snacks such as samosa, pakodi, and vada — crispy, spicy, and perfect for evening cravings.</p>
+    </div>
+  </a>
+
+  <!-- chips -->
+  <a href="chocolates.html" class="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition transform">
+    <img src="CANTEEN ITEMS\chips.jpeg" alt="Chocolates" class="w-full h-48 object-cover" loading="lazy">
+    <div class="p-4">
+      <h3 class="text-2xl font-bold text-yellow-300">Chips</h3>
+      <p class="text-gray-300 mt-1">Pick your favorite crispy chips — Lays, Bingo, and more — for the perfect salty snack anytime!</p>
+    </div>
+  </a>
+  <!--biscuits-->
+
+   <a href="chocolates.html" class="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition transform">
+    <img src="CANTEEN ITEMS\biscuits.jpeg" alt="Chocolates" class="w-full h-48 object-cover" loading="lazy">
+    <div class="p-4">
+      <h3 class="text-2xl font-bold text-yellow-300">Biscuits</h3>
+      <p class="text-gray-300 mt-1">From classic Marie to chocolaty Hide & Seek, grab your favorite biscuits to go with your chai or coffee.</p>
+    </div>
+  </a>
+
+   <!--chocolates-->
+   <a href="chocolates.html" class="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition transform">
+    <img src="CANTEEN ITEMS\chocolates.jpeg" alt="Chocolates" class="w-full h-48 object-cover" loading="lazy">
+    <div class="p-4">
+      <h3 class="text-2xl font-bold text-yellow-300">Chocolates</h3>
+      <p class="text-gray-300 mt-1">Sweeten your day with a quick treat — Dairy Milk, KitKat, 5 Star, and more indulgent chocolates await.</p>
+    </div>
+  </a>
+
+   <!--tea/beverages-->
+   <a href="chocolates.html" class="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition transform">
+    <img src="CANTEEN ITEMS\tea beverages.jpeg" alt="Chocolates" class="w-full h-48 object-cover" loading="lazy">
+    <div class="p-4">
+      <h3 class="text-2xl font-bold text-yellow-300">Tea/Beverages</h3>
+      <p class="text-gray-300 mt-1">Hot tea or strong coffee — refresh yourself between classes with a warm cup of your favorite brew.</p>
+    </div>
+  </a>
+
+   <!--cool drinks-->
+   <a href="chocolates.html" class="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition transform">
+    <img src="CANTEEN ITEMS\drinks.jpeg" alt="Chocolates" class="w-full h-48 object-cover" loading="lazy">
+    <div class="p-4">
+      <h3 class="text-2xl font-bold text-yellow-300">Cool drinks</h3>
+      <p class="text-gray-300 mt-1">Chill out with refreshing soft drinks like Maaza, Pepsi, Sprite — served ice-cold just for you!</p>
+    </div>
+  </a>
+
+
+
+  <div class="group w-40 m-4 text-center">
+  <!-- Image Wrapper -->
+  <div class="relative rounded-full overflow-hidden">
+    <img src="CANTEEN ITEMS/drinks.jpeg" alt="Chicken 65" class="w-40 h-40 object-cover rounded-full transition-transform duration-300 group-hover:scale-105" />
+    
+    <!-- Hover Overlay -->
+    <div class="absolute inset-0 bg-green-500 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <p class="text-white font-bold">Price: ₹55</p>
+    </div>
+  </div>
+
+  <!-- Item Name -->
+  <p class="mt-2 text-lg font-medium text-gray-800 dark:text-white">Chicken 65</p>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black bg-opacity-80 text-center p-4 text-gray-400">
+    &copy; 2025 SIEI Bites. Designed with ❤️ by the Students of SIEI.
+  </footer>
+</body>
+</html>

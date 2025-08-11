@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Home - SIEI Bites</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white min-h-screen">
+
+  <!-- ✅ Navbar -->
+  <nav class="bg-black bg-opacity-80 p-4 flex flex-wrap justify-between items-center">
+    <h1 class="text-yellow-400 text-2xl font-bold">👩‍🎓 Welcome, <span id="username">Student</span></h1>
+    <div class="space-x-2 flex flex-wrap justify-center mt-2 sm:mt-0">
+      <a href="home-user.html" class="px-4 py-2 bg-yellow-400 text-black rounded hover:bg-yellow-300">Home</a>
+      <a href="menu-user.html" class="px-4 py-2 bg-yellow-400 text-black rounded hover:bg-yellow-300">Menu</a>
+      <a href="myorders-user.html" class="px-4 py-2 bg-yellow-400 text-black rounded hover:bg-yellow-300">My Orders</a>
+      <a href="cart-user.html" class="px-4 py-2 bg-yellow-400 text-black rounded hover:bg-yellow-300">Cart</a>
+      <button onclick="logout()" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Logout</button>
+    </div>
+  </nav>
+
+  <!-- ✅ Main Content -->
+  <main class="p-10 text-center">
+    <h2 class="text-4xl font-bold text-yellow-300 mb-4">🍽️ SIEI Bites – Dashboard</h2>
+    <p class="text-gray-300">Order your favorite food, check your cart, and track your orders!</p>
+  </main>
+
+  <!-- ✅ Script to Handle Name + Logout -->
+  <script>
+    const user = JSON.parse(sessionStorage.getItem("user"));
+
+    if (user && user.name) {
+      document.getElementById("username").textContent = user.name;
+    } else {
+      // If no session, redirect to login
+      window.location.href = "studentlogin-user.html";
+    }
+
+    function logout() {
+      sessionStorage.clear();
+      window.location.href = "studentlogin-user.html";
+    }
+    
+  function handleUserLogin(event) {
+    event.preventDefault();
+
+    const id = document.getElementById('userID').value;
+    const pw = document.getElementById('userPassword').value;
+
+    if (id === "SIEI2025" && pw === "student") {
+      // Save user data in session
+      const user = {
+        name: "Vaishnavi" // You can fetch dynamically if needed
+      };
+      sessionStorage.setItem("user", JSON.stringify(user));
+
+      // Redirect to Home Page
+      window.location.href = "home-user.html";
+    } else {
+      alert("Invalid credentials ❌");
+    }
+  }
+
+
+  </script>
+
+</body>
+</html>
